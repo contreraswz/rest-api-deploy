@@ -1,0 +1,47 @@
+###RECUPERAR todas las peliculas
+GET  http://localhost:1234/
+
+###RECUPERAR todas las peliculas
+GET  http://localhost:1234/movies
+
+###recuperar pelicula por ID
+GET  http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+###Recupuerar pelicula por genero
+GET   http://localhost:1234/movies?genre=crime
+
+
+###Recupuerar pelicula por año
+GET   http://localhost:1234/movies?year=2010
+
+###Recupuerar pelicula por valoracion
+GET   http://localhost:1234/movies?rate=9
+
+###crear una pelicula
+POST   http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "yres",
+    "year": 1975,
+    "director": "Francis Ford Cappola",
+    "duration": 175,
+    "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "rate": 6,
+    "rate2": 6,
+    "rate1": 6
+}
+
+###Actualizar una pelicula
+PATCH  http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json 
+
+{
+    "year":1987,
+    "title": "Sopas"
+}
+
